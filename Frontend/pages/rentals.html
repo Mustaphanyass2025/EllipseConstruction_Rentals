@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellipse Construction Rentals – Reliable Construction Equipment</title>
+    <meta name="description"
+        content="Rent quality construction equipment and tools from Ellipse Construction. Trusted local service for all your project needs." />
+    <meta name="keywords"
+        content="construction equipment rental, tool hire, Ellipse Construction, heavy machinery rental, local construction tools" />
+    <meta name="author" content="Ellipse Construction" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:title" content="Ellipse Construction Rentals – Reliable Construction Equipment" />
+    <meta property="og:description"
+        content="Rent quality construction equipment and tools from Ellipse Construction. Trusted local service for all your project needs." />
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yourdomain.com/" />
+    <meta property="twitter:title" content="Ellipse Construction Rentals – Reliable Construction Equipment" />
+    <meta property="twitter:description"
+        content="Rent quality construction equipment and tools from Ellipse Construction. Trusted local service for all your project needs." />
+    <meta property="twitter:image" content="https://yourdomain.com/images/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/rentals.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <!--Particle Background-->
+    <div class="particles" id="particles-js"></div>
+    <header class="site-header">
+        <div class="container">
+            <a href="" class="logo-link">
+                <img src="../images/logo.jpg" alt="EllipseConstruction logo" class="logo-img">
+            </a>
+            <button class="hamburger" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-links">
+                    <li><a href="home.html" class="active"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="rentals.html"><i class="fas fa-tools"></i>Rentals</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i>Services</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--Main-->
+    <main>
+        <section id="rentals" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i>Popular Rentals</h2>
+                <p class="section-subtitle">Our Most Requested Equipment</p>
+            </div>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="mixing">Mixing</button>
+                <button class="filter-btn" data-filter="cutting">Cutting</button>
+                <button class="filter-btn" data-filter="lifting">Lifting</button>
+                <button class="filter-btn" data-filter="Power">Power</button>
+                <button class="filter-btn" data-filter="compacting">Compacting</button>
+                <button class="filter-btn" data-filter="formwork">Formwork</button>
+                <button class="filter-btn" data-filter="support">Support</button>
+                <button class="filter-btn" data-filter="vibrating">Vibrating</button>
+            </div>
+
+            <div class="rental-grid">
+                <article class="rental-item" data-category="mixing">
+                    <div class="rental-img-container">
+                        <img src="" alt="">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-mixer"></i>Concrete Mixer</h3>
+                        <p>Perfect for small to medium concrete projects. Easy to operate and clean.</p>
+                        <p class="status available">✅ Available</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i>Book Now</button>
+                    </div>
+                </article>
+
+                <article class="rental-item" data-category="formwork">
+                    <div class="rental-img-container">
+                        <img src="../images/acrojack.jpg" alt="Acro Jack">
+                        <div class="price-tag">GMD 1000/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-tools"></i>Acro Jack</h3>
+                        <p>Strong adjustable support prop for formwork, beams, and ceilings</p>
+                        <p class="status rented">⛔ Rented</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i>Book Now</button>
+                    </div>
+                </article>
+                <article class="rental-item" data-category="compacting">
+                    <div class="rental-img-container">
+                        <img src="../images/compactor.jpg" alt="compactor">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-road"></i>Compactor</h3>
+                        <p>Ideal for soil, gravel, or asphalt compaction. Durable and easy to use.</p>
+                        <p class="status available">✅ Available</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i>Book Now</button>
+                    </div>
+                </article>
+                <article class="rental-item" data-category="cutting">
+                    <div class="rental-img-container">
+                        <img src="" alt="">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-cut"></i> Concrete Cutter</h3>
+                        <p>>Precision cutting of concrete slabs and pavements</p>
+                        <p class="status out-of-stock">❌ Out of Stock</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i>Book Now</button>
+                    </div>
+                </article>
+                <article class="rental-item" data-category="lifting">
+                    <div class="rental-img-container">
+                        <img src="" alt="">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-ladder"></i>Ladder</h3>
+                        <p>Strong and stable ladders in various sizes for all uses</p>
+                        <p class="status available">✅ Available</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i>Book Now</button>
+                    </div>
+                </article>
+                <article class="rental-item" data-category="power">
+                    <div class="rental-img-container">
+                        <img src="" alt="">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-bolt"></i>Welding Generator</h3>
+                        <p>Reliable power source for welding and electricity on site.</p>
+                        <p class="status available">✅ Available</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i>Book Now</button>
+                    </div>
+                </article>
+                <article class="rental-item" data-category="support">
+                    <div class="rental-img-container">
+                        <img src="../images/default-equipment.jpg" alt="Scaffolding">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-layer-group"></i> Scaffolding</h3>
+                        <p>Safe, stable scaffolding systems for all heights.</p>
+                        <p class="status rented">⛔ Rented</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i> Book Now</button>
+                    </div>
+                </article>
+                <article class="rental-item" data-category="vibrating">
+                    <div class="rental-img-container">
+                        <img src="../images/default-equipment.jpg" alt="Poker Vibrator">
+                        <div class="price-tag">GMD 500/day</div>
+                    </div>
+                    <div class="rental-content">
+                        <h3><i class="fas fa-vibrate"></i> Poker Vibrator</h3>
+                        <p>Removes air bubbles to ensure solid concrete casting.</p>
+                        <p class="status available">✅ Available</p>
+                        <button class="btn btn-rental book-btn"><i class="fas fa-calendar-alt"></i> Book Now</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html"><i class="fas fa-chevron-right"></i>Home</a></li>
+                    <li><a href="rentals.html"><i class="fas fa-chevron-right"></i>Rentals</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i>Serices</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact info</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i>Kairaba Avenue, Serekunda, The Gambia</li>
+                    <li><i class="fas fa-phone"></i>+2203140126</li>
+                    <li><i class="fas fa-envelope"></i>ellipseconstruction383@gmail.com</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <ul class="business-hours">
+                    <li><span>Monday - Friday:</span> 9:00 AM - 4:00 PM</li>
+                    <li><span>Saturday:</span> 9:00 AM - 4:00 PM</li>
+                    <li><span>Sunday:</span> Closed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 EllipseConstruction Co.Ltd All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!--Booking Modal-->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="equipment-title"><i class="fas fa-tools"></i>Booking Equipment</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="equipment">Equipment</label>
+                    <input type="text" id="equipment" name="equipment" readonly>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="your_name">Your Name</label>
+                        <input type="text" id="your_name" name="your_name" placeholder="e.g. Mustapha Nyass" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="to_email">Email</label>
+                        <input type="email" id="to_email" name="to_email" placeholder="e.g. example@gmail.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. +2203119089">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Booking Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (in days)</label>
+                        <input type="number" id="duration" name="duration" placeholder="e.g. 3" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Message</label>
+                    <textarea name="message" id="message" rows="3" placeholder="Any special request?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i>Comfirm
+                    Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../src/particles.js"></script>
+
+    <!-- JavaScript -->
+    -<!--EmailJS SDK-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "BvDRvIEyQgsFZI7iT",
+            });
+        })();
+    </script>
+
+    <!-- Your custom script -->
+    <script src="../src/script.js"></script>
+</body>
+
+</html>

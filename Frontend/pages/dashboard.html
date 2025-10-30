@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellipse Construction - Dashboard</title>
+
+    <!-- Your existing dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../images/logo.jpg" alt="EllipseConstruction Logo">
+                <h2>Ellipse Construction</h2>
+            </div>
+
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="rentals.html"><i class="fas fa-tools"></i> Equipment</a></li>
+                    <li><a href="rentals.html"><i class="fas fa-calendar-alt"></i> Bookings</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Customers</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <div>
+                    <h4>Admin User</h4>
+                    <p>admin@ellipseconstruction.com</p>
+                </div>
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+        </aside>
+
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's what's happening today.</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="stats-cards">
+                <div class="card">
+                    <div class="card-icon bg-blue">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Total Equipment</h3>
+                        <h2 id="total-equipment">42</h2>
+                        <p>8% from last month</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Available</h3>
+                        <h2 id="available-equipment">28</h2>
+                        <p>67% of inventory</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-orange">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Active Rentals</h3>
+                        <h2 id="active-rentals">14</h2>
+                        <p>3 ending today</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-red">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Monthly Revenue</h3>
+                        <h2 id="monthly-revenue">GMD 125,400</h2>
+                        <p>12% from last month</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Monthly Revenue</h3>
+                        <select id="revenue-period">
+                            <option value="monthly">Monthly</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="daily">Daily</option>
+                        </select>
+                    </div>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Equipment Utilization</h3>
+                    </div>
+                    <canvas id="utilizationChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Recent Activity Section -->
+            <section class="recent-activity">
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3>Recent Bookings</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-list" id="recent-bookings">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3>Maintenance Alerts</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-list" id="maintenance-alerts">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Your existing scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Dashboard JavaScript -->
+    <script src="../src/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellipse Construction - Equipment</title>
+    <link rel="stylesheet" href="../styles/equipments.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Ellipse Construction</div>
+            <nav>
+                <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#"><i class="fas fa-calendar-alt"></i> Bookings</a>
+                <a href="#" class="active"><i class="fas fa-tools"></i> Equipment</a>
+                <a href="#"><i class="fas fa-users"></i> Customers</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1><i class="fas fa-tools"></i> Equipment Management</h1>
+                <button id="addEquipmentBtn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add Equipment
+                </button>
+            </header>
+
+            <!-- Filters & Search -->
+            <div class="filters">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search equipment...">
+                </div>
+                <select class="filter-select" id="statusFilter">
+                    <option value="all">All Statuses</option>
+                    <option value="available">Available</option>
+                    <option value="booked">Booked</option>
+                    <option value="maintenance">Under Maintenance</option>
+                </select>
+                <select class="filter-select" id="typeFilter">
+                    <option value="all">All Types</option>
+                    <option value="excavator">Excavator</option>
+                    <option value="bulldozer">Bulldozer</option>
+                    <option value="crane">Crane</option>
+                </select>
+            </div>
+
+            <!-- Equipment Stats Overview -->
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Total Equipment</h3>
+                    <p id="totalEquipment">24</p>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Available</h3>
+                    <p id="availableEquipment">18</p>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3>Booked</h3>
+                    <p id="bookedEquipment">4</p>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Under Maintenance</h3>
+                    <p id="maintenanceEquipment">2</p>
+                </div>
+            </div>
+
+            <!-- Equipment Table -->
+            <div class="equipment-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Equipment Name</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Last Maintenance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="equipmentTableBody">
+                        <!-- Sample Data - Will be populated by JavaScript -->
+                        <tr>
+                            <td>EC-001</td>
+                            <td>Caterpillar 320 Excavator</td>
+                            <td>Excavator</td>
+                            <td><span class="status-badge status-available">Available</span></td>
+                            <td>2024-05-15</td>
+                            <td>
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EC-002</td>
+                            <td>Komatsu D65 Bulldozer</td>
+                            <td>Bulldozer</td>
+                            <td><span class="status-badge status-booked">Booked</span></td>
+                            <td>2024-04-20</td>
+                            <td>
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EC-003</td>
+                            <td>Liebherr LTM 1100 Crane</td>
+                            <td>Crane</td>
+                            <td><span class="status-badge status-maintenance">Maintenance</span></td>
+                            <td>2024-03-10</td>
+                            <td>
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Equipment Modal -->
+    <div id="equipmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Equipment</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="equipmentForm">
+                    <div class="form-group">
+                        <label for="equipmentName">Equipment Name</label>
+                        <input type="text" id="equipmentName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="equipmentType">Type</label>
+                        <select id="equipmentType" class="form-control" required>
+                            <option value="excavator">Excavator</option>
+                            <option value="bulldozer">Bulldozer</option>
+                            <option value="crane">Crane</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="equipmentStatus">Status</label>
+                        <select id="equipmentStatus" class="form-control" required>
+                            <option value="available">Available</option>
+                            <option value="booked">Booked</option>
+                            <option value="maintenance">Under Maintenance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastMaintenanceDate">Last Maintenance Date</label>
+                        <input type="date" id="lastMaintenanceDate" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveEquipmentBtn">Save Equipment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/equipment.js"></script>
+</body>
+
+</html>
